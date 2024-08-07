@@ -105,8 +105,8 @@ public class ChickenServlet extends HttpServlet{
 		sb.append("<h3> 주소 : " + ordererAddress + "</h3>");
 		
 		sb.append("<ul>");
-			sb.append("<li>치킨 : " + chicken + "</li>");
-			sb.append("<li>뼈/순살 : " + (type.equals("bone") ? "뼈" : "순살" ) + "</li>");         
+		sb.append("<li>치킨 : " + chicken + "</li>");
+		sb.append("<li>뼈/순살 : " + (type.equals("bone") ? "뼈" : "순살" ) + "</li>");         
 		
 			// 옵션이 있을 경우
 			if(options != null) {
@@ -126,6 +126,8 @@ public class ChickenServlet extends HttpServlet{
 		sb.append("</html>");
 		
 		out.write(sb.toString()); // HTML 클라이언트에게 출력하기
+		
+		System.out.println("코드 수정함");
 		
 		
 	} // end doGet()
