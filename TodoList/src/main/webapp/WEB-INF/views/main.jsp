@@ -20,18 +20,18 @@
 
   <hr>
 
-    <h4>할 일 추가</h4>
-    <form action="/todo/add" method="post" id="addForm">
-      <div>
-        제목 : <input type="text" name="title">
-      </div>
-      <div>
-        <textarea name="detail" 
-          rows="3" cols="50" placeholder="상세 내용"></textarea>
-      </div>
+  <h4>할 일 추가</h4>
+  <form action="/todo/add" method="post" id="addForm">
+    <div>
+      제목 : <input type="text" name="title">
+    </div>
+    <div>
+      <textarea name="detail" 
+        rows="3" cols="50" placeholder="상세 내용"></textarea>
+    </div>
 
-      <button>추가</button>
-    </form>
+    <button>추가</button>
+  </form>
 
   <hr>
 
@@ -52,7 +52,12 @@
           <th>${vs.count}</th>
 
           <td>
-            <a href="#"> ${todo.title}</a>
+            <%-- 제목 클릭 시
+              인덱스 번호를 이용하여 todoList의 
+              인덱스 번째 요소 내용을 조회하기
+              (쿼리스트링 이용 : 주소?K=V&K=V&.....)
+            --%>
+            <a href="/todo/detail?index=${vs.index}"> ${todo.title}</a>
           </td>
 
           <%-- 완료 여부 --%>

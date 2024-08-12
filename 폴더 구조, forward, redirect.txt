@@ -1,0 +1,54 @@
+webapp 폴더
+- 배포되는 폴더
+- JSP forward 경로 기준
+- 웹 요청 주소 기준
+
+WEB-INF 폴더
+- 클라이언트가 주소로 직접 요청할 수 없는 폴더
+- 서버는 접근 가능
+
+resources 폴더
+- 정적(static) 자원을 모아두는 폴더
+- html, css, js, images 등이 모여있음
+
+
+ip:port/ 요청  ->  webapp폴더 바로 아래 index.html/jsp 응답
+ex) localhost:8080/
+
+
+forward(요청 위임)
+- 요청을 받은 Servlet/JSP가
+  HttpServletRequest, HttpServletResponse 객체를
+  다른 Servlet/JSP로 위임하여 
+  대신 응답 처리하게 하는 것
+
+- 기존 HttpServletRequest, HttpServletResponse가
+  계속 유지됨
+  
+- 브라우저의 주소는 첫 요청 주소로 표기되어 있음
+
+
+Redirect(재요청)
+- 요청 받은 Servlet/JSP가 
+  직접 응답하는 것이 아닌
+  다른 Servlet/JSP를 요청하는 것
+
+- 보통은 Servlet이 요청을 받았는데
+  별도의 응답 결과가 없을 경우에 사용
+  ex) 메인페이지 -> 로그인 요청 
+     성공/실패 페이지 없이 다시 메인 페이지
+     
+     이 때 "로그인 요청" Servlet은
+     별도 응답 결과가 없기 때문에
+     메인 페이지로 redirect(재요청)
+     
+- 기존 HttpServletRequest/HttpServletResponse가
+  유지되지 않고 새롭게 만들어짐
+  -> request scope 객체로 데이터 전달이 불가능
+   --> session/application scope 객체를 이용
+
+
+
+
+
+

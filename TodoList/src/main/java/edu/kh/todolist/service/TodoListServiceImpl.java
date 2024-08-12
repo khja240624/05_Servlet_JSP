@@ -63,22 +63,9 @@ public class TodoListServiceImpl implements TodoListService{
 	//-------------------------------------------------------------------------------------------------
 	
 	@Override
-	public String todoDetailView(int index) {
+	public Todo todoDetailView(int index) {
 		Todo todo = dao.todoDetailView(index);
-		
-		if(todo == null) return null;
-		
-		StringBuilder sb = new StringBuilder(); 
-		
-		sb.append("--------------------------------------------\n");
-		sb.append( String.format("제목 : %s\n", todo.getTitle()) );
-		sb.append( String.format("등록일 : %s\n", dateFormat(todo.getRegDate())) );		
-		sb.append( String.format("완료여부 : %s\n", todo.isComplete() ? "O" : "X") );
-		sb.append("\n[세부 내용]\n");
-		sb.append("--------------------------------------------\n");
-		sb.append( String.format("%s\n", todo.getDetail()) );
-		
-		return sb.toString();
+		return todo;
 	}
 	
 	//-------------------------------------------------------------------------------------------------

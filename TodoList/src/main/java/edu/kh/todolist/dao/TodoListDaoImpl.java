@@ -132,6 +132,10 @@ private final String FILE_PATH = "TodoList.dat";
 	@Override
 	public boolean todoUpdate(int index, String title, String detail) throws FileNotFoundException, IOException {
 		
+		// TodoList 범위 초과 시 false 반환
+		if(index < 0 || index >= todoList.size()) return false;
+		
+		
 		// 수정된 내용 + 이전 Todo의 완료 여부, 등록일을 담은 Todo 객체 생성 
 		Todo newTodo = new Todo();
 		
